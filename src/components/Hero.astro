@@ -1,0 +1,126 @@
+---
+// Hero.astro — Title section with paper name
+---
+<section id="hero" class="hero-section">
+  <div class="hero-inner">
+    <div class="hero-badge">ICRA 2026</div>
+    <h1 class="hero-title">
+      <span class="title-main">CAV Black Box</span>
+    </h1>
+    <p class="hero-subtitle">Adaptive and Efficient Storage under Vibration</p>
+
+    <!-- TODO: Uncomment and fill in author info after acceptance -->
+    <!--
+    <div class="hero-authors">
+      <p>Author 1<sup>1</sup>, Author 2<sup>2</sup>, Author 3<sup>1</sup></p>
+      <p class="affiliations"><sup>1</sup>University A &nbsp; <sup>2</sup>University B</p>
+    </div>
+    -->
+  </div>
+</section>
+
+<style>
+  .hero-section {
+    padding: 5rem 1.5rem 3rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(192, 94, 60, 0.06) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .hero-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .hero-badge {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    background: rgba(192, 94, 60, 0.08);
+    border: 1px solid rgba(192, 94, 60, 0.2);
+    padding: 0.4rem 1.2rem;
+    border-radius: 100px;
+    margin-bottom: 2rem;
+  }
+
+  .hero-title {
+    font-family: var(--font-heading);
+    font-size: 3.2rem;
+    font-weight: 400;
+    color: var(--color-primary);
+    line-height: 1.15;
+    margin-bottom: 0.8rem;
+    letter-spacing: -0.02em;
+  }
+
+  .title-main {
+    display: block;
+  }
+
+  .hero-subtitle {
+    font-family: var(--font-body);
+    font-size: 1.35rem;
+    font-weight: 300;
+    color: var(--color-text-muted);
+    line-height: 1.5;
+    max-width: 600px;
+    margin: 0 auto;
+    letter-spacing: 0.01em;
+  }
+
+  .hero-authors {
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--color-border-light);
+  }
+
+  .hero-authors p {
+    font-size: 1rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+  }
+
+  .hero-authors .affiliations {
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+    margin-top: 0.3rem;
+  }
+
+  .hero-authors sup {
+    font-size: 0.7em;
+    color: var(--color-accent);
+  }
+
+  @media (max-width: 768px) {
+    .hero-section {
+      padding: 3rem 1rem 2rem;
+    }
+
+    .hero-title {
+      font-size: 2.2rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1.1rem;
+    }
+  }
+</style>

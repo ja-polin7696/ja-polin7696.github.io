@@ -1,0 +1,65 @@
+---
+// ProblemStatement.astro — Section 2: Problem statement paragraphs
+---
+<section id="problem-statement" class="content-section">
+  <div class="section-container">
+    <h2 class="section-heading reveal">Problem Statement</h2>
+
+    <div class="prose reveal">
+      <!-- TODO: Replace with your actual problem statement paragraph 1 -->
+      <p>
+        Connected and autonomous vehicles (CAVs) generate vast amounts of sensor and telemetry data 
+        that must be reliably stored as a "black box" for forensic analysis, regulatory compliance, 
+        and continuous learning. However, the harsh vibrational environment inside a moving vehicle 
+        presents significant challenges to conventional storage systems, leading to data corruption, 
+        mechanical failures, and reduced device lifespans.
+      </p>
+
+      <!-- TODO: Replace with your actual problem statement paragraph 2 -->
+      <p>
+        Existing solutions either sacrifice storage capacity for durability or fail to adapt to 
+        varying vibration profiles encountered during real-world driving. There is a critical need 
+        for a storage architecture that dynamically adjusts its write strategies and error-correction 
+        mechanisms based on real-time vibration sensing, while maintaining high throughput and 
+        storage efficiency.
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .section-heading {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    color: var(--color-primary);
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 0.75rem;
+  }
+
+  .section-heading::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 48px;
+    height: 3px;
+    background: var(--color-accent);
+    border-radius: 2px;
+  }
+
+  .prose {
+    max-width: 100%;
+  }
+
+  .prose p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--color-text);
+    margin-bottom: 1.25rem;
+  }
+
+  .prose p:last-child {
+    margin-bottom: 0;
+  }
+</style>

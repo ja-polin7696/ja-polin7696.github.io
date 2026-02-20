@@ -1,0 +1,54 @@
+---
+// ContentParagraphs.astro — Section 4: Additional content paragraphs
+
+// TODO: Replace these paragraphs with your actual content
+const paragraphs = [
+  "Our proposed CAV Black Box system introduces a vibration-aware storage controller that continuously monitors accelerometer data from the vehicle chassis. By classifying vibration patterns in real-time using a lightweight neural network, the controller dynamically selects optimal write block sizes, adjusts ECC (Error Correction Code) redundancy levels, and manages wear leveling strategies. This approach reduces write amplification by up to 37% compared to static configurations while maintaining data integrity guarantees.",
+  "Extensive evaluation across both simulated vibration profiles and real-world road tests demonstrates that our system achieves 99.97% data integrity under extreme conditions (vibration amplitudes up to 8g), while simultaneously extending the effective lifespan of the storage medium by 2.3x. The adaptive mechanism adds less than 0.8% computational overhead, making it practical for deployment in resource-constrained automotive embedded systems.",
+];
+---
+
+<section id="content-paragraphs" class="content-section">
+  <div class="section-container">
+    <h2 class="section-heading reveal">Approach &amp; Key Findings</h2>
+
+    <div class="prose reveal">
+      {paragraphs.map((text) => (
+        <p>{text}</p>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .section-heading {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    color: var(--color-primary);
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 0.75rem;
+  }
+
+  .section-heading::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 48px;
+    height: 3px;
+    background: var(--color-accent);
+    border-radius: 2px;
+  }
+
+  .prose p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--color-text);
+    margin-bottom: 1.25rem;
+  }
+
+  .prose p:last-child {
+    margin-bottom: 0;
+  }
+</style>

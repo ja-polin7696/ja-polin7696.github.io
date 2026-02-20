@@ -1,0 +1,124 @@
+---
+// ImageShowcase.astro — Section 3: Image comparison groups (2/3 groups)
+
+// TODO: Update descriptions and image paths for each group
+const imageGroups = [
+  {
+    description: "Comparison of storage write patterns under low-frequency vibration (5-20 Hz). Left: baseline approach showing data fragmentation. Right: our adaptive method maintaining sequential writes.",
+    images: [
+      { src: "/images/image1.jpg", alt: "Baseline approach under low-frequency vibration" },
+      { src: "/images/image1.jpg", alt: "Our adaptive approach under low-frequency vibration" },
+    ],
+  },
+  {
+    description: "Performance under high-frequency vibration (50-200 Hz). Left: conventional storage with visible write errors. Right: our system dynamically adjusting error-correction levels.",
+    images: [
+      { src: "/images/image1.jpg", alt: "Conventional storage under high-frequency vibration" },
+      { src: "/images/image1.jpg", alt: "Adaptive storage under high-frequency vibration" },
+    ],
+  },
+  {
+    description: "Real-world road test results on varying terrain. Left: gravel road scenario. Right: highway cruising scenario, demonstrating the system's adaptability across conditions.",
+    images: [
+      { src: "/images/image1.jpg", alt: "Gravel road test results" },
+      { src: "/images/image1.jpg", alt: "Highway cruising test results" },
+    ],
+  },
+];
+---
+
+<section id="image-showcase" class="content-section">
+  <div class="section-container">
+    <h2 class="section-heading reveal">Results</h2>
+
+    <div class="image-groups">
+      {imageGroups.map((group, index) => (
+        <div class="image-group reveal" style={`transition-delay: ${index * 0.1}s`}>
+          <p class="group-description">{group.description}</p>
+          <div class="image-pair">
+            {group.images.map((img) => (
+              <div class="image-card card">
+                <img src={img.src} alt={img.alt} loading="lazy" />
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .section-heading {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    color: var(--color-primary);
+    margin-bottom: 2rem;
+    position: relative;
+    padding-bottom: 0.75rem;
+  }
+
+  .section-heading::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 48px;
+    height: 3px;
+    background: var(--color-accent);
+    border-radius: 2px;
+  }
+
+  .image-groups {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .image-group {
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid var(--color-border-light);
+  }
+
+  .image-group:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .group-description {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+    margin-bottom: 1.25rem;
+    max-width: 100%;
+  }
+
+  .image-pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .image-card {
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    background: var(--color-surface);
+  }
+
+  .image-card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+
+  .image-card:hover img {
+    transform: scale(1.02);
+  }
+
+  @media (max-width: 600px) {
+    .image-pair {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
